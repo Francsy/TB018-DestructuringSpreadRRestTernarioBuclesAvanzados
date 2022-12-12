@@ -100,27 +100,11 @@ function combineTwoArrays(arr, arr2) {
 // onlyUniques("gato", "pollo", "cerdo", "cerdo"); //['gato', 'pollo', 'cerdo']
 // onlyUniques(1, 1, 2, 2, 3, 6, 7, 8); //[1, 2, 3, 6, 7, 8]
 
-function onlyUniques (...uniques) {
-    let newArray = []
-    for (let i = 0; i < array.length; i++) {
-       if (newArray.indexOf(uniques[i]) == -1) {
-        newArray.push(uniques[i]);
-       }
-        
-    }
-    return uniques;
+function onlyUniques(...arr) {
+    let sinRepetidos = arr.filter((element,index)=>arr.indexOf(element) === index);
+    return sinRepetidos;
 }
 
-
-function onlyUniques (...uniques) {
-    uniques.filter((element, index, array) => {
-        
-        for (element of array) {
-            if (element[index])
-        }
-
-    })
-}
 
 // 6. Escriba una función llamada combineAllArrays que pueda recibir cualquier cantidad de arrays como argumentos y los combine todos en un solo array.
 
@@ -131,22 +115,16 @@ function combineAllArrays(...arr) {
     return arr.flat();
 }
 
+// function combineAllArrays(arr, arr2, resto) {
+//     return [...arr, ...arr2, ...resto]
+//  }
+
 //7. Escriba una función llamada sumAndSquare que reciba cualquier número de argumentos, los eleve al cuadrado y devuelva la suma de todos los valores cuadrados.
 
 function sumAndSquare(...rest) {
-    rest.map(num) => num**2;
-
-}
-sumAndSquare(1,2,3,4)
-
-function sumAndSquere (...rest) {
-    const cuadrados = rest.map ((num) => num*num)
-    cuadrados.reduce((acc,val) => acc + val,0)
-}
-
-
-
-
-
-const cuadrados = rest.map ((num) => num*num)
-cuadrados.reduce((acc,val) => acc + val,0)
+    let sum = 0;
+    const cuadrados = rest.map((num) => num*num);
+    sum = cuadrados.reduce((acc,val) => acc + val,0);
+    return sum;
+  }
+  
